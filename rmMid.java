@@ -1,26 +1,13 @@
+//only have access to the node that needs to be removed, don't have access to the head;
 public class rmMid{
-	public void rmM(Node head){
-		Node p = null;
-		Node n = head;
-		Node m = head;
-		boolean has_mid = true;
-		if(n == null){
-			has_mid = false;
+	public void rmM(Node mid){
+		if(mid.next == null || mid == null){
+			System.out.println("cannot delete the last node!");
+			return;
 		}
-		while(m.next!=null){
-			p = n;
-			n = n.next;
-			m = m.next;
-			if(m.next==null){ //tell the number of nodes is odd or even
-				has_mid = false;
-				break;
-			}
-			m = m.next;
-		}
-		if(has_mid && p!=null){
-			p.next = n.next; //delete the mid node
-		}
-		else
-			System.out.println("no mid node");
+		Node n = mid.next;
+		mid.data = n.data;
+		mid.next = n.next;
+		return;
 	}
 }
