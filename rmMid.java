@@ -9,5 +9,5 @@ public class rmMid{
 		mid.data = n.data;
 		mid.next = n.next;
 		return;
-	}
+	} 
 }
